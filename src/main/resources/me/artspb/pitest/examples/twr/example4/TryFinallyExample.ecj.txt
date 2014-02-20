@@ -1,0 +1,98 @@
+// class version 51.0 (51)
+// access flags 0x21
+public class me/artspb/pitest/examples/twr/example4/TryFinallyExample {
+
+  // compiled from: TryFinallyExample.java
+
+  // access flags 0x1
+  public <init>()V
+   L0
+    LINENUMBER 9 L0
+    ALOAD 0
+    INVOKESPECIAL java/lang/Object.<init> ()V
+    RETURN
+    MAXSTACK = 1
+    MAXLOCALS = 1
+
+  // access flags 0x9
+  public static main([Ljava/lang/String;)V throws java/io/IOException 
+    TRYCATCHBLOCK L0 L1 L2 null
+    TRYCATCHBLOCK L3 L4 L4 null
+    TRYCATCHBLOCK L5 L6 L6 null
+   L5
+    LINENUMBER 12 L5
+    ACONST_NULL
+    ASTORE 1
+    ACONST_NULL
+    ASTORE 2
+   L3
+    NEW java/io/ByteArrayOutputStream
+    DUP
+    INVOKESPECIAL java/io/ByteArrayOutputStream.<init> ()V
+    ASTORE 3
+   L0
+    LINENUMBER 13 L0
+    ALOAD 3
+    INVOKEVIRTUAL java/io/ByteArrayOutputStream.flush ()V
+   L1
+    LINENUMBER 14 L1
+    ALOAD 3
+    IFNULL L7
+    ALOAD 3
+    INVOKEVIRTUAL java/io/ByteArrayOutputStream.close ()V
+    GOTO L7
+   L2
+   FRAME FULL [[Ljava/lang/String; java/lang/Throwable java/lang/Throwable java/io/ByteArrayOutputStream] [java/lang/Throwable]
+    ASTORE 1
+    ALOAD 3
+    IFNULL L8
+    ALOAD 3
+    INVOKEVIRTUAL java/io/ByteArrayOutputStream.close ()V
+   L8
+   FRAME CHOP 1
+    ALOAD 1
+    ATHROW
+   L4
+   FRAME SAME1 java/lang/Throwable
+    ASTORE 2
+    ALOAD 1
+    IFNONNULL L9
+    ALOAD 2
+    ASTORE 1
+    GOTO L10
+   L9
+   FRAME SAME
+    ALOAD 1
+    ALOAD 2
+    IF_ACMPEQ L10
+    ALOAD 1
+    ALOAD 2
+    INVOKEVIRTUAL java/lang/Throwable.addSuppressed (Ljava/lang/Throwable;)V
+   L10
+   FRAME SAME
+    ALOAD 1
+    ATHROW
+   L6
+   FRAME FULL [[Ljava/lang/String;] [java/lang/Throwable]
+    ASTORE 4
+   L11
+    LINENUMBER 15 L11
+    GETSTATIC java/lang/System.out : Ljava/io/PrintStream;
+    LDC "Finally!"
+    INVOKEVIRTUAL java/io/PrintStream.println (Ljava/lang/String;)V
+   L12
+    LINENUMBER 16 L12
+    ALOAD 4
+    ATHROW
+   L7
+    LINENUMBER 15 L7
+   FRAME SAME
+    GETSTATIC java/lang/System.out : Ljava/io/PrintStream;
+    LDC "Finally!"
+    INVOKEVIRTUAL java/io/PrintStream.println (Ljava/lang/String;)V
+   L13
+    LINENUMBER 17 L13
+    RETURN
+    MAXSTACK = 2
+    MAXLOCALS = 5
+}

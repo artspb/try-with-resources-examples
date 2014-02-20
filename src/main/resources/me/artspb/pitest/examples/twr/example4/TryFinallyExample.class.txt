@@ -1,0 +1,102 @@
+// class version 46.0 (46)
+// access flags 0x21
+public class me/artspb/pitest/examples/twr/example4/TryFinallyExample {
+
+  // compiled from: TryFinallyExample.java
+
+  // access flags 0x1
+  public <init>()V
+   L0
+    LINENUMBER 9 L0
+    ALOAD 0
+    INVOKESPECIAL java/lang/Object.<init> ()V
+    RETURN
+   L1
+    LOCALVARIABLE this Lme/artspb/pitest/examples/twr/example4/TryFinallyExample; L0 L1 0
+    MAXSTACK = 1
+    MAXLOCALS = 1
+
+  // access flags 0x9
+  public static main([Ljava/lang/String;)V throws java/io/IOException 
+  ATTRIBUTE org.aspectj.weaver.MethodDeclarationLineNumber : unknown
+    TRYCATCHBLOCK L0 L1 L2 null
+    TRYCATCHBLOCK L3 L4 L4 null
+    TRYCATCHBLOCK L5 L6 L6 null
+    TRYCATCHBLOCK L7 L8 L6 null
+   L5
+    LINENUMBER 12 L5
+    ACONST_NULL
+    ASTORE 1
+    ACONST_NULL
+    ASTORE 2
+   L3
+    NEW java/io/ByteArrayOutputStream
+    DUP
+    INVOKESPECIAL java/io/ByteArrayOutputStream.<init> ()V
+    ASTORE 3
+   L0
+    LINENUMBER 13 L0
+    ALOAD 3
+    INVOKEVIRTUAL java/io/ByteArrayOutputStream.flush ()V
+   L1
+    LINENUMBER 14 L1
+    ALOAD 3
+    IFNULL L7
+    ALOAD 3
+    INVOKEVIRTUAL java/io/ByteArrayOutputStream.close ()V
+    GOTO L7
+   L2
+    ASTORE 1
+    ALOAD 3
+    IFNULL L9
+    ALOAD 3
+    INVOKEVIRTUAL java/io/ByteArrayOutputStream.close ()V
+   L9
+    ALOAD 1
+    ATHROW
+   L4
+    ASTORE 2
+    ALOAD 1
+    IFNONNULL L10
+    ALOAD 2
+    ASTORE 1
+    GOTO L11
+   L10
+    ALOAD 1
+    ALOAD 2
+    IF_ACMPEQ L11
+    ALOAD 1
+    ALOAD 2
+    INVOKEVIRTUAL java/lang/Throwable.addSuppressed (Ljava/lang/Throwable;)V
+   L11
+    ALOAD 1
+    ATHROW
+   L6
+    ASTORE 5
+    JSR L12
+   L13
+    LINENUMBER 16 L13
+    ALOAD 5
+    ATHROW
+   L12
+    LINENUMBER 14 L12
+    ASTORE 4
+   L14
+    LINENUMBER 15 L14
+    GETSTATIC java/lang/System.out : Ljava/io/PrintStream;
+    LDC "Finally!"
+    INVOKEVIRTUAL java/io/PrintStream.println (Ljava/lang/String;)V
+   L15
+    LINENUMBER 16 L15
+    RET 4
+   L7
+    JSR L12
+   L8
+    LINENUMBER 17 L8
+    RETURN
+   L16
+    LOCALVARIABLE args [Ljava/lang/String; L5 L16 0
+    LOCALVARIABLE baos Ljava/io/ByteArrayOutputStream; L0 L9 3
+    MAXSTACK = 2
+    MAXLOCALS = 6
+}

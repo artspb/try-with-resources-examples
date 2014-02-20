@@ -1,0 +1,134 @@
+// class version 51.0 (51)
+// access flags 0x21
+public class me/artspb/pitest/examples/twr/example6/TryWithNestedTryExample {
+
+  // compiled from: TryWithNestedTryExample.java
+
+  // access flags 0x1
+  public <init>()V
+   L0
+    LINENUMBER 10 L0
+    ALOAD 0
+    INVOKESPECIAL java/lang/Object.<init> ()V
+    RETURN
+    MAXSTACK = 1
+    MAXLOCALS = 1
+
+  // access flags 0x9
+  public static main([Ljava/lang/String;)V throws java/io/IOException 
+    TRYCATCHBLOCK L0 L1 L2 null
+    TRYCATCHBLOCK L3 L4 L4 null
+    TRYCATCHBLOCK L5 L6 L7 null
+    TRYCATCHBLOCK L8 L9 L9 null
+   L10
+    LINENUMBER 13 L10
+    ACONST_NULL
+    ASTORE 1
+    ACONST_NULL
+    ASTORE 2
+   L8
+    NEW java/io/ByteArrayOutputStream
+    DUP
+    INVOKESPECIAL java/io/ByteArrayOutputStream.<init> ()V
+    ASTORE 3
+   L5
+    LINENUMBER 14 L5
+    ACONST_NULL
+    ASTORE 4
+    ACONST_NULL
+    ASTORE 5
+   L3
+    LINENUMBER 14 L3
+    NEW java/io/BufferedOutputStream
+    DUP
+    ALOAD 3
+    INVOKESPECIAL java/io/BufferedOutputStream.<init> (Ljava/io/OutputStream;)V
+    ASTORE 6
+   L0
+    LINENUMBER 15 L0
+    ALOAD 6
+    INVOKEVIRTUAL java/io/BufferedOutputStream.flush ()V
+   L1
+    LINENUMBER 16 L1
+    ALOAD 6
+    IFNULL L6
+    ALOAD 6
+    INVOKEVIRTUAL java/io/BufferedOutputStream.close ()V
+    GOTO L6
+   L2
+   FRAME FULL [[Ljava/lang/String; java/lang/Throwable java/lang/Throwable java/io/ByteArrayOutputStream java/lang/Throwable java/lang/Throwable java/io/BufferedOutputStream] [java/lang/Throwable]
+    ASTORE 4
+    ALOAD 6
+    IFNULL L11
+    ALOAD 6
+    INVOKEVIRTUAL java/io/BufferedOutputStream.close ()V
+   L11
+   FRAME CHOP 1
+    ALOAD 4
+    ATHROW
+   L4
+   FRAME SAME1 java/lang/Throwable
+    ASTORE 5
+    ALOAD 4
+    IFNONNULL L12
+    ALOAD 5
+    ASTORE 4
+    GOTO L13
+   L12
+   FRAME SAME
+    ALOAD 4
+    ALOAD 5
+    IF_ACMPEQ L13
+    ALOAD 4
+    ALOAD 5
+    INVOKEVIRTUAL java/lang/Throwable.addSuppressed (Ljava/lang/Throwable;)V
+   L13
+   FRAME SAME
+    ALOAD 4
+    ATHROW
+   L6
+    LINENUMBER 17 L6
+   FRAME CHOP 2
+    ALOAD 3
+    IFNULL L14
+    ALOAD 3
+    INVOKEVIRTUAL java/io/ByteArrayOutputStream.close ()V
+    GOTO L14
+   L7
+   FRAME SAME1 java/lang/Throwable
+    ASTORE 1
+    ALOAD 3
+    IFNULL L15
+    ALOAD 3
+    INVOKEVIRTUAL java/io/ByteArrayOutputStream.close ()V
+   L15
+   FRAME CHOP 1
+    ALOAD 1
+    ATHROW
+   L9
+   FRAME SAME1 java/lang/Throwable
+    ASTORE 2
+    ALOAD 1
+    IFNONNULL L16
+    ALOAD 2
+    ASTORE 1
+    GOTO L17
+   L16
+   FRAME SAME
+    ALOAD 1
+    ALOAD 2
+    IF_ACMPEQ L17
+    ALOAD 1
+    ALOAD 2
+    INVOKEVIRTUAL java/lang/Throwable.addSuppressed (Ljava/lang/Throwable;)V
+   L17
+   FRAME SAME
+    ALOAD 1
+    ATHROW
+   L14
+    LINENUMBER 18 L14
+   FRAME CHOP 2
+    RETURN
+    MAXSTACK = 3
+    MAXLOCALS = 7
+}

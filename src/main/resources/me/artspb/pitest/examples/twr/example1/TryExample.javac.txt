@@ -1,0 +1,114 @@
+// class version 51.0 (51)
+// access flags 0x21
+public class me/artspb/pitest/examples/twr/example1/TryExample {
+
+  // compiled from: TryExample.java
+
+  // access flags 0x1
+  public <init>()V
+   L0
+    LINENUMBER 9 L0
+    ALOAD 0
+    INVOKESPECIAL java/lang/Object.<init> ()V
+    RETURN
+   L1
+    LOCALVARIABLE this Lme/artspb/pitest/examples/twr/example1/TryExample; L0 L1 0
+    MAXSTACK = 1
+    MAXLOCALS = 1
+
+  // access flags 0x9
+  public static main([Ljava/lang/String;)V throws java/io/IOException 
+    TRYCATCHBLOCK L0 L1 L2 java/lang/Throwable
+    TRYCATCHBLOCK L3 L4 L5 java/lang/Throwable
+    TRYCATCHBLOCK L3 L4 L6 null
+    TRYCATCHBLOCK L7 L8 L9 java/lang/Throwable
+    TRYCATCHBLOCK L5 L10 L6 null
+   L11
+    LINENUMBER 12 L11
+    NEW java/io/ByteArrayOutputStream
+    DUP
+    INVOKESPECIAL java/io/ByteArrayOutputStream.<init> ()V
+    ASTORE 1
+   L12
+    ACONST_NULL
+    ASTORE 2
+   L3
+    LINENUMBER 13 L3
+    ALOAD 1
+    INVOKEVIRTUAL java/io/ByteArrayOutputStream.flush ()V
+   L4
+    LINENUMBER 14 L4
+    ALOAD 1
+    IFNULL L13
+    ALOAD 2
+    IFNULL L14
+   L0
+    ALOAD 1
+    INVOKEVIRTUAL java/io/ByteArrayOutputStream.close ()V
+   L1
+    GOTO L13
+   L2
+   FRAME FULL [[Ljava/lang/String; java/io/ByteArrayOutputStream java/lang/Throwable] [java/lang/Throwable]
+    ASTORE 3
+   L15
+    ALOAD 2
+    ALOAD 3
+    INVOKEVIRTUAL java/lang/Throwable.addSuppressed (Ljava/lang/Throwable;)V
+   L16
+    GOTO L13
+   L14
+   FRAME SAME
+    ALOAD 1
+    INVOKEVIRTUAL java/io/ByteArrayOutputStream.close ()V
+    GOTO L13
+   L5
+    LINENUMBER 12 L5
+   FRAME SAME1 java/lang/Throwable
+    ASTORE 3
+    ALOAD 3
+    ASTORE 2
+    ALOAD 3
+    ATHROW
+   L6
+    LINENUMBER 14 L6
+   FRAME SAME1 java/lang/Throwable
+    ASTORE 4
+   L10
+    ALOAD 1
+    IFNULL L17
+    ALOAD 2
+    IFNULL L18
+   L7
+    ALOAD 1
+    INVOKEVIRTUAL java/io/ByteArrayOutputStream.close ()V
+   L8
+    GOTO L17
+   L9
+   FRAME FULL [[Ljava/lang/String; java/io/ByteArrayOutputStream java/lang/Throwable T java/lang/Throwable] [java/lang/Throwable]
+    ASTORE 5
+   L19
+    ALOAD 2
+    ALOAD 5
+    INVOKEVIRTUAL java/lang/Throwable.addSuppressed (Ljava/lang/Throwable;)V
+   L20
+    GOTO L17
+   L18
+   FRAME SAME
+    ALOAD 1
+    INVOKEVIRTUAL java/io/ByteArrayOutputStream.close ()V
+   L17
+   FRAME SAME
+    ALOAD 4
+    ATHROW
+   L13
+    LINENUMBER 15 L13
+   FRAME FULL [[Ljava/lang/String;] []
+    RETURN
+   L21
+    LOCALVARIABLE x2 Ljava/lang/Throwable; L15 L16 3
+    LOCALVARIABLE x2 Ljava/lang/Throwable; L19 L20 5
+    LOCALVARIABLE baos Ljava/io/ByteArrayOutputStream; L12 L13 1
+    LOCALVARIABLE args [Ljava/lang/String; L11 L21 0
+    MAXSTACK = 2
+    MAXLOCALS = 6
+}

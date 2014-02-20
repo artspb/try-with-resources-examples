@@ -1,0 +1,154 @@
+// class version 51.0 (51)
+// access flags 0x21
+public class me/artspb/pitest/examples/twr/example3/TryCatchFinallyExample {
+
+  // compiled from: TryCatchFinallyExample.java
+
+  // access flags 0x1
+  public <init>()V
+   L0
+    LINENUMBER 9 L0
+    ALOAD 0
+    INVOKESPECIAL java/lang/Object.<init> ()V
+    RETURN
+   L1
+    LOCALVARIABLE this Lme/artspb/pitest/examples/twr/example3/TryCatchFinallyExample; L0 L1 0
+    MAXSTACK = 1
+    MAXLOCALS = 1
+
+  // access flags 0x9
+  public static main([Ljava/lang/String;)V
+    TRYCATCHBLOCK L0 L1 L2 java/lang/Throwable
+    TRYCATCHBLOCK L3 L4 L5 java/lang/Throwable
+    TRYCATCHBLOCK L3 L4 L6 null
+    TRYCATCHBLOCK L7 L8 L9 java/lang/Throwable
+    TRYCATCHBLOCK L5 L10 L6 null
+    TRYCATCHBLOCK L11 L12 L13 java/io/IOException
+    TRYCATCHBLOCK L11 L12 L14 null
+    TRYCATCHBLOCK L13 L15 L14 null
+    TRYCATCHBLOCK L14 L16 L14 null
+   L11
+    LINENUMBER 12 L11
+    NEW java/io/ByteArrayOutputStream
+    DUP
+    INVOKESPECIAL java/io/ByteArrayOutputStream.<init> ()V
+    ASTORE 1
+   L17
+    ACONST_NULL
+    ASTORE 2
+   L3
+    LINENUMBER 13 L3
+    ALOAD 1
+    INVOKEVIRTUAL java/io/ByteArrayOutputStream.flush ()V
+   L4
+    LINENUMBER 14 L4
+    ALOAD 1
+    IFNULL L12
+    ALOAD 2
+    IFNULL L18
+   L0
+    ALOAD 1
+    INVOKEVIRTUAL java/io/ByteArrayOutputStream.close ()V
+   L1
+    GOTO L12
+   L2
+   FRAME FULL [[Ljava/lang/String; java/io/ByteArrayOutputStream java/lang/Throwable] [java/lang/Throwable]
+    ASTORE 3
+   L19
+    ALOAD 2
+    ALOAD 3
+    INVOKEVIRTUAL java/lang/Throwable.addSuppressed (Ljava/lang/Throwable;)V
+   L20
+    GOTO L12
+   L18
+   FRAME SAME
+    ALOAD 1
+    INVOKEVIRTUAL java/io/ByteArrayOutputStream.close ()V
+    GOTO L12
+   L5
+    LINENUMBER 12 L5
+   FRAME SAME1 java/lang/Throwable
+    ASTORE 3
+    ALOAD 3
+    ASTORE 2
+    ALOAD 3
+    ATHROW
+   L6
+    LINENUMBER 14 L6
+   FRAME SAME1 java/lang/Throwable
+    ASTORE 4
+   L10
+    ALOAD 1
+    IFNULL L21
+    ALOAD 2
+    IFNULL L22
+   L7
+    ALOAD 1
+    INVOKEVIRTUAL java/io/ByteArrayOutputStream.close ()V
+   L8
+    GOTO L21
+   L9
+   FRAME FULL [[Ljava/lang/String; java/io/ByteArrayOutputStream java/lang/Throwable T java/lang/Throwable] [java/lang/Throwable]
+    ASTORE 5
+   L23
+    ALOAD 2
+    ALOAD 5
+    INVOKEVIRTUAL java/lang/Throwable.addSuppressed (Ljava/lang/Throwable;)V
+   L24
+    GOTO L21
+   L22
+   FRAME SAME
+    ALOAD 1
+    INVOKEVIRTUAL java/io/ByteArrayOutputStream.close ()V
+   L21
+   FRAME SAME
+    ALOAD 4
+    ATHROW
+   L12
+    LINENUMBER 17 L12
+   FRAME FULL [[Ljava/lang/String;] []
+    GETSTATIC java/lang/System.out : Ljava/io/PrintStream;
+    LDC "Finally!"
+    INVOKEVIRTUAL java/io/PrintStream.println (Ljava/lang/String;)V
+   L25
+    LINENUMBER 18 L25
+    GOTO L26
+   L13
+    LINENUMBER 14 L13
+   FRAME SAME1 java/io/IOException
+    ASTORE 1
+   L27
+    LINENUMBER 15 L27
+    ALOAD 1
+    INVOKEVIRTUAL java/io/IOException.printStackTrace ()V
+   L15
+    LINENUMBER 17 L15
+    GETSTATIC java/lang/System.out : Ljava/io/PrintStream;
+    LDC "Finally!"
+    INVOKEVIRTUAL java/io/PrintStream.println (Ljava/lang/String;)V
+   L28
+    LINENUMBER 18 L28
+    GOTO L26
+   L14
+    LINENUMBER 17 L14
+   FRAME SAME1 java/lang/Throwable
+    ASTORE 6
+   L16
+    GETSTATIC java/lang/System.out : Ljava/io/PrintStream;
+    LDC "Finally!"
+    INVOKEVIRTUAL java/io/PrintStream.println (Ljava/lang/String;)V
+    ALOAD 6
+    ATHROW
+   L26
+    LINENUMBER 19 L26
+   FRAME SAME
+    RETURN
+   L29
+    LOCALVARIABLE x2 Ljava/lang/Throwable; L19 L20 3
+    LOCALVARIABLE x2 Ljava/lang/Throwable; L23 L24 5
+    LOCALVARIABLE baos Ljava/io/ByteArrayOutputStream; L17 L12 1
+    LOCALVARIABLE e Ljava/io/IOException; L27 L15 1
+    LOCALVARIABLE args [Ljava/lang/String; L11 L29 0
+    MAXSTACK = 2
+    MAXLOCALS = 7
+}
