@@ -1,0 +1,74 @@
+// class version 51.0 (51)
+// access flags 0x21
+public class me/artspb/pitest/examples/twr/example7/TryWithInterfaceExample {
+
+  // compiled from: TryWithInterfaceExample.java
+
+  // access flags 0x1
+  public <init>()V
+    ALOAD 0
+    INVOKESPECIAL java/lang/Object.<init> ()V
+    RETURN
+    MAXSTACK = 1
+    MAXLOCALS = 1
+
+  // access flags 0x9
+  public static main([Ljava/lang/String;)V throws java/io/IOException 
+    TRYCATCHBLOCK L0 L1 L2 null
+    TRYCATCHBLOCK L3 L4 L4 null
+    ACONST_NULL
+    ASTORE 1
+    ACONST_NULL
+    ASTORE 2
+   L3
+    NEW java/io/ByteArrayOutputStream
+    DUP
+    INVOKESPECIAL java/io/ByteArrayOutputStream.<init> ()V
+    ASTORE 3
+   L0
+    ALOAD 3
+    CHECKCAST java/io/Flushable
+    INVOKEINTERFACE java/io/Flushable.flush ()V
+   L1
+    ALOAD 3
+    IFNULL L5
+    ALOAD 3
+    INVOKEINTERFACE java/io/Closeable.close ()V
+    GOTO L5
+   L2
+   FRAME FULL [[Ljava/lang/String; java/lang/Throwable java/lang/Throwable java/io/Closeable] [java/lang/Throwable]
+    ASTORE 1
+    ALOAD 3
+    IFNULL L6
+    ALOAD 3
+    INVOKEINTERFACE java/io/Closeable.close ()V
+   L6
+   FRAME CHOP 1
+    ALOAD 1
+    ATHROW
+   L4
+   FRAME SAME1 java/lang/Throwable
+    ASTORE 2
+    ALOAD 1
+    IFNONNULL L7
+    ALOAD 2
+    ASTORE 1
+    GOTO L8
+   L7
+   FRAME SAME
+    ALOAD 1
+    ALOAD 2
+    IF_ACMPEQ L8
+    ALOAD 1
+    ALOAD 2
+    INVOKEVIRTUAL java/lang/Throwable.addSuppressed (Ljava/lang/Throwable;)V
+   L8
+   FRAME SAME
+    ALOAD 1
+    ATHROW
+   L5
+   FRAME CHOP 2
+    RETURN
+    MAXSTACK = 2
+    MAXLOCALS = 4
+}
