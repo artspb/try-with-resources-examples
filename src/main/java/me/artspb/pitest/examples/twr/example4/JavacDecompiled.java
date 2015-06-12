@@ -4,22 +4,23 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 
 public class JavacDecompiled { // Java Decompiler
+
     public static void main(String[] args) throws IOException {
         try {
             ByteArrayOutputStream baos = new ByteArrayOutputStream();
-            Throwable localThrowable2 = null;
+            Throwable primaryExc = null;
             try {
                 baos.flush();
-            } catch (Throwable localThrowable1) {
-                localThrowable2 = localThrowable1;
-                throw localThrowable1;
+            } catch (Throwable t) {
+                primaryExc = t;
+                throw t;
             } finally {
                 if (baos != null) {
-                    if (localThrowable2 != null) {
+                    if (primaryExc != null) {
                         try {
                             baos.close();
-                        } catch (Throwable x2) {
-                            localThrowable2.addSuppressed(x2);
+                        } catch (Throwable suppressedExc) {
+                            primaryExc.addSuppressed(suppressedExc);
                         }
                     } else {
                         baos.close();
