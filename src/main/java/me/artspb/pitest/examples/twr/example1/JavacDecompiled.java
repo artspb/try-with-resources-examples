@@ -20,7 +20,7 @@ public class JavacDecompiled { // Java Decompiler
                         baos.close(); // L0 L7
                     } catch (Throwable suppressedExc) { // L2 L9
                         primaryExc.addSuppressed(suppressedExc); // L15 L19
-                    } // L16 L8 L20
+                    } // L1 L16 L8 L20
                 } else {
                     baos.close(); // L14 L18
                 }

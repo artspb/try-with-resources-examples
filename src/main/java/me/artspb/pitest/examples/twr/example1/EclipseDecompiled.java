@@ -23,10 +23,8 @@ public class EclipseDecompiled { // handmade
             caughtThrowableVariable = t; // L4
             if (primaryExceptionVariable == null) {
                 primaryExceptionVariable = caughtThrowableVariable;
-            } else {
-                if (primaryExceptionVariable != caughtThrowableVariable) { // L8
-                    primaryExceptionVariable.addSuppressed(caughtThrowableVariable);
-                }
+            } else if (primaryExceptionVariable != caughtThrowableVariable) { // L8
+                primaryExceptionVariable.addSuppressed(caughtThrowableVariable);
             }
             throw primaryExceptionVariable; // L9
         } // L6
